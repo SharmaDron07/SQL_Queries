@@ -1,0 +1,12 @@
+﻿CreAte table Product (PID int(8),PNAME VARCHAR(30),PPRICE INT(5) NOT NULL ,CONSTRAINT PK1 PRIMARY  KEY(PID)
+);
+DESCRIBE Product;
+CreAte table Customer (CUSTID int(8),PID int(10) references Product(PID) ,CUSTNAME varchar(40) );
+DESCRIBE Customer;
+insert into Product(PID,PNAME,PPRICE) VALUES (1,'Mobile',3350);
+insert into Product(PID,PNAME,PPRICE) VALUES (2,'Laptop',41360);
+insert into Product(PID,PNAME,PPRICE) VALUES (3,'DESKTOP',6477);
+DESCRIBE Customer;
+
+CreAte table Customer (CUSTID int(8),PID int(10),CUSTNAME varchar(40), CONSTRAINT FK1 FOREIGN KEY (PID ) REFERENCES Product(PID));
+DESCRIBE Customer;

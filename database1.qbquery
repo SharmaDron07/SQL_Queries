@@ -1,0 +1,9 @@
+﻿create table  FacultyDetails (
+field1 varchar(100),
+Description varchar(100),
+Type1 varchar(100),
+Size int
+);
+SELECT * FROM FacultyDetails;
+insert into FacultyDetails (field1,Description,Type1,Size) VALUES ('Faculty_Id','unique ID to every Faculty','Character','20');
+insert into FacultyDetails (field1,Description,Type1,Size) VALUES ('Faculty pswd','login pswd','Character',20);

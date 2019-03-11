@@ -1,0 +1,81 @@
+﻿CREATE TABLE BatchDetails (
+Batch_id VARCHAR(20),
+Batch_Faculty varchar(20) NOT NULL,
+Batch_DEPT_Name varchar(20) NOT NULL,
+constraint  pk1 Primary key(Batch_id),
+   CHECK (Batch_id='S%')
+);
+select * from Batchdetails;
+CREATE TABLE ModuleDetails (
+Module_id VARCHAR(20) NOT NULL,
+Module_Name varchar(20) NOT NULL,
+Module_Duration int  NOT NULL,
+constraint  pk2 Primary key(Module_id),
+   CHECK (UPPER (Module_id))
+);
+select * from ModuleDetails;
+CREATE TABLE ModuleDetails (
+Module_id VARCHAR(20) NOT NULL,
+Module_Name varchar(20) NOT NULL,
+Module_Duration int  NOT NULL,
+constraint  pk2 Primary key(Module_id),
+   CHECK (UPPER (Module_id))
+);
+select * from ModuleDetails;
+CREATE TABLE ModuleDetails (
+Module_id VARCHAR(20) NOT NULL,
+Module_Name varchar(20) NOT NULL,
+Module_Duration int  NOT NULL,
+constraint  pk2 Primary key(Module_id),
+   CHECK (UPPER (Module_id))
+);
+select * from ModuleDetails;
+CREATE TABLE StudentDetails ( Student_id VARCHAR(20) NOT NULL,Title VARCHAR(20) NOT NULL,Student_Name varchar(20) NOT NULL,Student_Location varchar(20)  NOT NULL,Student_Track varchar(20)  NOT NULL , Student_Qualification varchar(20)  NOT NULL,Student_Email varchar(20)  NOT NULL,Student_password varchar(20)  NOT NULL, constraint  pk3 Primary key(Student_id),CHECK (UPPER (Student_id)));
+select * from StudentDetails;
+Describe StudentDetails;
+
+CREATE TABLE Questions (
+Questions_id VARCHAR(20) NOT NULL,
+Module_Id varchar(20),
+Question_Text varchar(20) NOT NULL,
+constraint  pk4 Primary key(Questions_id),
+constraint  fk1 Foreign key(Module_Id),
+ CHECK (Questions_id='Q%')
+);
+
+CREATE TABLE StudentStatus (
+Student_id VARCHAR(20) NOT NULL,
+Module_Id VARCHAR(20) NOT NULL ,
+Batch_Id varchar(20)  NOT NULL,
+Faculty_Id varchar(20)  NOT NULL,
+Start_Date date,
+End_Date date,
+AFeedbackGiven varchar(20),
+TFeedbackGiven varchar(20),
+Constraint fk3 Foreign key(Student_id),
+Constraint fk14 Foreign key(Module_Id),
+Constraint fk51 Foreign key(Batch_Id),
+Constraint fk6 Foreign Key(Faculty_Id)
+);
+CREATE TABLE Faculty_Feedback (
+Faculty_id VARCHAR(20) NOT NULL,
+Question_Id VARCHAR(20) NOT NULL ,
+Batch_Id varchar(20)  NOT NULL,
+Module_Id varchar(20)  NOT NULL,
+Faculty_Rating varchar(20) NOT NULL,
+TFeedbackGiven varchar(20) NOT NULL,
+Constraint fk8  Foreign key(Student_id),
+Constraint fk9  Foreign key(Question_Id),
+Constraint fk10 Foreign key(Batch_Id),
+Constraint fk11 Foreign Key(Module_Id)
+);
+CREATE TABLE Student_Feedback (
+Student_id VARCHAR(20) NOT NULL,
+Question_Id VARCHAR(20) NOT NULL ,
+Module_Id varchar(20)  NOT NULL,
+Student_Rating varchar(20) NOT NULL,
+Constraint fk11  Foreign key(Student_id),
+Constraint fk12 Foreign key(Question_Id),
+Constraint fk13 Foreign key(Module_Id),
+
+);
